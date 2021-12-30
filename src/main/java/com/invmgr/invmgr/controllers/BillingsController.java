@@ -29,4 +29,9 @@ public class BillingsController {
     public String saveBilling(@RequestBody Invoice invoice) {
         return billingService.save(invoice) ? "Success" : "Failure";
     }
+
+    @GetMapping("/api/test")
+    public String test() {
+        return "Hello world";
+    }
 }
