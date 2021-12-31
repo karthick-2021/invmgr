@@ -26,6 +26,10 @@ public class BillingService {
         return invoiceRepository.save(invoice).invoiceNo > 0 ? true : false;
     }
 
+    public boolean save(Inventory inventory) {
+        return inventoryRepository.save(inventory).productID.length() > 0 ? true : false;
+    }
+
     public List<Invoice> getAllInvoices() {
         return invoiceRepository.findAll();
     }

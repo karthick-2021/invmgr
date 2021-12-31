@@ -1,5 +1,8 @@
 package com.invmgr.invmgr.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Inventory")
 public class Inventory {
     public String productID;
     public String product;

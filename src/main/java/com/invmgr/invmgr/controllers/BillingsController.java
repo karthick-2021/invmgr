@@ -36,6 +36,11 @@ public class BillingsController {
         return billingService.save(invoice) ? "Success" : "Failure";
     }
 
+    @PostMapping("/api/saveInventory")
+    public String saveInventory(@RequestBody Inventory inventory) {
+        return billingService.save(inventory) ? "Success" : "Failure";
+    }
+
     @GetMapping("/api/test")
     public String test() {
         return "Hello world";
