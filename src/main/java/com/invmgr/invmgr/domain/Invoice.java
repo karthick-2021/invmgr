@@ -1,17 +1,20 @@
 package com.invmgr.invmgr.domain;
 
-import java.util.Date;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
+@Document(collection = "Invoices")
 public class Invoice {
+    @Id
     public int invoiceNo;
     public int custMobile;
     public String custName;
     public String custEmail;
-    public Date date;
+    public String date;
     public List<Billings> billings;
     public String amtInWords;
-    public int grandTotal;
 
     public int getInvoiceNo() {
         return invoiceNo;
@@ -45,11 +48,11 @@ public class Invoice {
         this.custEmail = custEmail;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -76,4 +79,7 @@ public class Invoice {
     public void setGrandTotal(int grandTotal) {
         this.grandTotal = grandTotal;
     }
+
+    public int grandTotal;
+
 }

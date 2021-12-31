@@ -13,6 +13,7 @@ public class HistoricalRepository {
     }
 
     public static void setHistoricalInvoices(Integer invoiceNo, Invoice invoice) {
+        System.out.println(HISTORICAL_INVOICES);
         HISTORICAL_INVOICES.put(invoiceNo, invoice);
     }
 
